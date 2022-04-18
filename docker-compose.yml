@@ -1,0 +1,7 @@
+services:
+  api-service:
+    build: .
+    ports:
+      - 8000:8000
+    restart: always
+    command: gunicorn -w 4 -b 0.0.0.0:8000 serviceEntrypoint:app --timeout 300
